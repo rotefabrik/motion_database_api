@@ -1,0 +1,14 @@
+version: "3"
+services:
+  elasticsearch:
+    image: "elasticsearch:6.5.3"
+    ports:
+      - "9211:9200"
+      - "9311:9300"
+  postgis:
+    image: "mdillon/postgis:11"
+    environment:
+      - "POSTGRES_USER=motion_database"
+      - "POSTGRES_PASSWORD=motion_database"
+    ports:
+      - "5321:5432"
