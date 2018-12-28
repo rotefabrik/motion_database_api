@@ -1,1 +1,2 @@
 django-nose==1.4.6
+pydevd==1.4.0
