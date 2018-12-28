@@ -52,7 +52,7 @@ class MotionsView(APIView):
 def build_search_query(search_options):
     query = None
 
-    if not search_options or search_options.get('body') == u'':
+    if not search_options or search_options.get('body') in [u'', None]:
         query = Q()
     else:
         query = Q("multi_match", query=search_options.get('body', u''), fields=['title', 'body'])
@@ -70,8 +70,8 @@ def build_search_query(search_options):
         query &= build_submitters_query(search_options.get('submitters'))
 
     # referrals
-    if search_options.get('referrals'):
-        query &= build_referrals_query(search_options.get('referrals'))
+    if search_options.get('referred'):
+        query &= build_referred_query(search_options.get('referred'))
 
     # status
     if search_options.get('status'):
@@ -103,7 +103,7 @@ def build_submitters_query(submitters):
     return Q('bool', must=query_parts)
 
 
-def build_referrals_query(submitters):
+def build_referred_query(submitters):
     query_parts = []
     for submitter_name in submitters:
         term_query = Q('term', referrals__name=submitter_name)
