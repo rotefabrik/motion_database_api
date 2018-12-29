@@ -27,7 +27,10 @@ SECRET_KEY = '(l%8!773)xt%(1_*nr56kob53-1=1&1=++ws^+jp6%&e1l7lo='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+allowed_hosts = ['localhost', '127.0.0.1']
+if os.environ.get('ALLOWED_HOSTS'):
+    allowed_hosts += os.environ.get('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = allowed_hosts
 
 
 # Application definition
