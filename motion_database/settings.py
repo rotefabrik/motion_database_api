@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl',
     'rest_framework',
 
+    'api',
     'convention',
     'submitter',
     'motion',

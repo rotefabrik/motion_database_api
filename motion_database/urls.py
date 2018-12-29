@@ -17,6 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^motions/', include('motion.urls', namespace=u'motion')),
+    url(r'^api/?', include('api.urls', namespace=u'api')),
     url(r'^admin/', admin.site.urls),
 ]
