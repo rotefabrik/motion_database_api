@@ -1,6 +1,6 @@
 arrow==0.12.1
 django-cors-headers
-Django==1.11.17
+Django==2.2.24
 django-elasticsearch-dsl==0.5.1
 djangorestframework==3.9.0
 elasticsearch==6.1.1
