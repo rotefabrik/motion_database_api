@@ -1,4 +1,4 @@
-arrow==0.12.1
+arrow==0.15.1
 django-cors-headers
 Django==1.11.17
 django-elasticsearch-dsl==0.5.1
